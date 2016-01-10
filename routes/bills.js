@@ -42,7 +42,7 @@ router.post('/add_bill', function(req, res) {
                 'last_action_date': req.body.last_action_date,
                 'last_version_date': req.body.last_version_date
             },
-        'history': 
+        'history':
             {
                 'active': req.body.active,
                 'active_at': req.body.active_at,
@@ -73,7 +73,7 @@ router.post('/add_bill', function(req, res) {
                 'last_action_date': req.body.last_action_date,
                 'last_version_date': req.body.last_version_date
             },
-        'history': 
+        'history':
             {
                 'active': req.body.active,
                 'active_at': req.body.active_at,
@@ -148,6 +148,7 @@ router.get('/bill_data', function(req, res) {
     };
 });
 
+// Bill by committee data
 router.get('/tree_data', function(req, res) {
     var db = req.db;
     var collection = db.get('bill_list');
