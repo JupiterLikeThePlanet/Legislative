@@ -188,7 +188,7 @@ function setCommittee(detailed_bill_obj, upcoming_bill_obj) {
 
 function addBill(bill) {
     $.ajax({
-        type: 'POST',
+        type: 'GET',
         data: bill,
         url: '/bills/add_bill',
         dataType: 'JSON'
