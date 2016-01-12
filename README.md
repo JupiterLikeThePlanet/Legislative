@@ -1,14 +1,17 @@
 # Legislative
-Stay up to date on current bills hitting the house and senate floors
+Stay up to date on current bills hitting the house and senate floors.
 
-### Pitch
+http://jb-legislative.herokuapp.com/
 
-Hi my name is Nathan, and I’m from Washington, DC.
+## Getting Started using Terminal
+1. git clone https://github.com/jupiterliketheplanet/Legislative.git
+2. npm install
+3. npm start
+4. http://localhost:3000
 
-Growing up right outside of the nation’s capital, I was exposed to the importance of one’s civic duty, whether its recycling, going out to vote, or simply staying up to date on current issues.
+## File Structure
+* public/javascripts/global.js - houses all the API calls and data structure manipulation
+* public/javascripts/index.js - contains the JavaScript for the front end view
+* routes/bills.js - routes for kicking off API calls, seeding, and testing datastructures
+* views/index.ejs - embedded javascript/html file for front end view
 
-However, in order to stay informed on what our legislative branch is up to – I often rely on different media sources for what they deem important to report. 
-
-Legislative lets you know what current bills are being discussed on the house or senate floor. Using text mining and analytics, we can derive which keywords may or may not be mentioned in upcoming bills and get a better sense of what our congress is voting on versus what the media might portray.
-
-Using legislative, easily stay up to date with what your local, state, and federal government are working towards.    
