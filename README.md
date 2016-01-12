@@ -1,7 +1,7 @@
 # Legislative
 Stay up to date on current bills hitting the house and senate floors.
 
-http://jb-legislative.herokuapp.com/
+http://legislative.herokuapp.com/
 
 ## Getting Started using Terminal
 1. git clone https://github.com/jupiterliketheplanet/Legislative.git
