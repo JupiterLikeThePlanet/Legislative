@@ -11,7 +11,6 @@ router.get('/bill_list', function(req, res) {
         } else {
             res.json(docs);
         }
-        // res.json(docs);
     });
 });
 
@@ -20,38 +19,7 @@ router.post('/add_bill', function(req, res) {
     var collection = db.get('bill_list');
     console.log("Add Bill Request Body: ",req.body);
     collection.update(
-    	{
-        'bill_id': req.body.bill_id,
-        'official_title': req.body.official_title,
-        'short_title': req.body.short_title,
-        'committees':
-    			{'committee_id': req.body.committee_id,
-    			'committee_name': req.body.committee_name},
-        'congress': req.body.congress,
-        'description': req.body.description,
-        'chamber' : req.body.chamber,
-        'urls':
-            {
-                'congress': req.body.url_congress,
-                'govtrack': req.body.url_govtrack,
-                'opencongress': req.body.url_opencongress
-            },
-        'dates':
-            {
-                'intro_date': req.body.intro_date,
-                'last_action_date': req.body.last_action_date,
-                'last_version_date': req.body.last_version_date
-            },
-        'history': 
-            {
-                'active': req.body.active,
-                'active_at': req.body.active_at,
-                'awaiting_signature': req.body.awaiting_signature,
-                'enacted': req.body.enacted,
-                'vetoed': req.body.vetoed
-            }
-    	},
-    	{
+        {
         'bill_id': req.body.bill_id,
         'official_title': req.body.official_title,
         'short_title': req.body.short_title,
@@ -73,7 +41,7 @@ router.post('/add_bill', function(req, res) {
                 'last_action_date': req.body.last_action_date,
                 'last_version_date': req.body.last_version_date
             },
-        'history': 
+        'history':
             {
                 'active': req.body.active,
                 'active_at': req.body.active_at,
@@ -82,14 +50,45 @@ router.post('/add_bill', function(req, res) {
                 'vetoed': req.body.vetoed
             }
         },
-    	{'upsert': true},
-	    function(err, result){
+        {
+        'bill_id': req.body.bill_id,
+        'official_title': req.body.official_title,
+        'short_title': req.body.short_title,
+        'committees':
+                {'committee_id': req.body.committee_id,
+                'committee_name': req.body.committee_name},
+        'congress': req.body.congress,
+        'description': req.body.description,
+        'chamber' : req.body.chamber,
+        'urls':
+            {
+                'congress': req.body.url_congress,
+                'govtrack': req.body.url_govtrack,
+                'opencongress': req.body.url_opencongress
+            },
+        'dates':
+            {
+                'intro_date': req.body.intro_date,
+                'last_action_date': req.body.last_action_date,
+                'last_version_date': req.body.last_version_date
+            },
+        'history':
+            {
+                'active': req.body.active,
+                'active_at': req.body.active_at,
+                'awaiting_signature': req.body.awaiting_signature,
+                'enacted': req.body.enacted,
+                'vetoed': req.body.vetoed
+            }
+        },
+        {'upsert': true},
+        function(err, result){
             if(err){console.error("failed to add bill", err);}
             if(result){console.log("successfully added bill", result);}
-	        res.send(
-	            (err === null) ? { msg: '' } : { msg: err }
-	        );
-	    }
+            res.send(
+                (err === null) ? { msg: '' } : { msg: err }
+            );
+        }
     );
 });
 
@@ -179,8 +178,6 @@ router.get('/tree_data', function(req, res) {
         return bill_data
     };
 });
-
-
 
 
 
